@@ -1,0 +1,30 @@
+import  processing.serial. * ;
+직렬 myPort;
+
+String keyDisp;
+void  setup () {
+  
+  크기 ( 800 , 600 );
+  // 사용 가능한 모든 직렬 포트를 나열합니다.
+  printArray ( Serial . list ());
+  
+  // 원하는 속도로 사용중인 포트를 엽니 다.
+  // myPort = new Serial (this, Serial.list () [0], 9600);
+  myPort =  새로운  시리얼 ( 이 , 직렬 . 리스트 () 직렬 . 리스트 () . 길이 -  1 , 9600 );
+  
+  keyDisp =  " - " ;
+}
+void  draw () {
+  배경 ( 255 );  
+  채우기 ( 0 );
+  
+  String buf =  String . 형식 ( " cnt : % d " , frameCount );
+  텍스트 (buf, 20 , 20 );
+  // int i = frameCount % 255;
+  텍스트 (keyDisp, 20 , 40 );
+}
+
+void  keyPressed () {
+    keyDisp =  문자열 . 형식 ( " % c " , 키 );
+    myPort . 쓰기 ( 키 );
+}

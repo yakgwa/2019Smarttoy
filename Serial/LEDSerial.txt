@@ -1,0 +1,21 @@
+void  setup () {
+  연속물. 시작 ( 9600 );    // 직렬 포트를 열고 데이터 속도를 9600bps로 설정합니다.
+  pinMode (LED_BUILTIN, OUTPUT);
+}
+
+무효  루프 () {
+  if (Serial. available ()> 0 ) {
+    int incomingByte = Serial. read ();
+    if (incomingByte == ' 1 ' )
+    {
+      digitalWrite (LED_BUILTIN, HIGH); // (HIGH는 전압 레벨 임)
+      연속물. 인쇄 ( " On " );
+    }
+    else  if (incomingByte == ' 0 ' )
+    {
+      digitalWrite (LED_BUILTIN, LOW); // 전압을 낮추어 라.
+      연속물. 인쇄 ( " 꺼짐 " );
+    }
+  }
+  
+}

@@ -1,0 +1,34 @@
+// https://create.arduino.cc/projecthub/remnis/h-bridge-for-your-robot-025ae8
+
+int IN1 = 10 ;
+int IN2 = 11 ;
+ 
+void  setup () {
+  연속물. 시작 ( 9600 );
+  pinMode (LED_BUILTIN, OUTPUT);  
+  pinMode (IN1, OUTPUT);    
+  pinMode (IN2, OUTPUT);
+}
+ 
+무효  루프 () {
+  // 앞으로
+  digitalWrite (IN1, HIGH);
+  digitalWrite (IN2, LOW);
+  digitalWrite (LED_BUILTIN, HIGH);
+  연속물. print ( ' 1 ' );
+  지연 ( 1000 );
+
+   // 뒤로
+  digitalWrite (IN1, LOW);
+  digitalWrite (IN2, HIGH);
+  digitalWrite (LED_BUILTIN, LOW);
+  연속물. print ( ' 2 ' );
+  지연 ( 1000 );
+
+  digitalWrite (IN1, HIGH);
+  digitalWrite (IN2, HIGH);
+  digitalWrite (LED_BUILTIN, HIGH);
+  연속물. print ( ' 0 ' );
+  지연 ( 1000 );
+  
+}
